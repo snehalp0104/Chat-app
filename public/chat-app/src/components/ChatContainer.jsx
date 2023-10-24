@@ -23,7 +23,7 @@ const ChatContainer = ({currentChat,currentUser,socket}) => {
     };}
   
     fetchData();
-  }, [currentChat]);
+  }, [currentChat,currentUser]);
 
   const handleSendMsg=async(msg)=>{
   await axios.post(sendMessageRoute,{
@@ -37,7 +37,7 @@ const ChatContainer = ({currentChat,currentUser,socket}) => {
     message:msg
   });
 
-  const msgs =[... messages];
+  const msgs =[...messages];
   msgs.push({fromSelf:true,message:msg});
   setMessages(msgs);
    
@@ -49,7 +49,7 @@ const ChatContainer = ({currentChat,currentUser,socket}) => {
         setArrivalMessage({fromSelf:false, message:msg})
       })
     }
-  },[])
+  },[socket])
 
   useEffect(()=>{
     arrivalMessage && setMessages((prev)=>[...prev,arrivalMessage]);

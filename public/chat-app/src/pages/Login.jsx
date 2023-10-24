@@ -28,7 +28,7 @@ const Login = () => {
         navigate('/');
       }
     }  
-    ,[])
+    ,[navigate])
  const handleSubmit =async(event)=>{
     event.preventDefault();
     if(handleValidation())

@@ -31,7 +31,7 @@ const SetAvatar = () => {
       };
     
       fetchData();
-    }, []);
+    }, [navigate]);
     
    
    const setProfilePicture = async()=>{

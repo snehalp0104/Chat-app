@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import styled from "styled-components"
 import Logo from "../assets/logo.svg"
 import { Link, useNavigate } from 'react-router-dom';
@@ -47,7 +47,7 @@ const Register = () => {
 
  const handleValidation =()=>{
     const {password,confirmPassword,username,email}=values;
-    if(password!=confirmPassword)
+    if(password!==confirmPassword)
     {
        toast.error("password and confirm password should be same.",toastOptions
        );

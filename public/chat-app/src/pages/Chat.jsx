@@ -27,7 +27,7 @@ const Chat = () => {
     };
   
     fetchData();
-  }, []);
+  }, [navigate]);
   useEffect(()=>{
     if(currentUser){
       socket.current=io(host);
@@ -52,7 +52,7 @@ const Chat = () => {
    
   
     fetchData();
-    }, [currentUser]);
+    }, [currentUser,navigate]);
 
     const handleChatChange = (chat)=>{
     setCurrentChat(chat);
